@@ -26,30 +26,36 @@ const Add = () => {
     <div className="form">
       <h1>Add New Book</h1>
       <input
+        className="input"
         type="text"
         placeholder="name"
         name="name"
         onChange={handleChange}
       />
       <input
+        className="input"
         type="text"
         placeholder="phone_number"
         name="phone_number"
         onChange={handleChange}
       />
       <input
+        className="input"
         type="text"
         placeholder="balance"
         name="balance"
         onChange={handleChange}
       />
       <input
+        className="input"
         type="text"
         placeholder="date"
         name="date"
         onChange={handleChange}
       />
-      <button onClick={handleClick}>Add</button>
+      <button className="btn" onClick={handleClick}>
+        Add
+      </button>
     </div>
   );
 };

@@ -15,8 +15,8 @@ const Update = () => {
 
   const handleChange = (e) => {
     setDues((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-    };
-    
+  };
+
   const handleClick = async (e) => {
     e.preventDefault();
     try {
@@ -30,30 +30,36 @@ const Update = () => {
     <div className="form">
       <h1>Update Client Data</h1>
       <input
+        className="input"
         type="text"
         placeholder="name"
         name="name"
         onChange={handleChange}
       />
       <input
+        className="input"
         type="text"
         placeholder="phone_number"
         name="phone_number"
         onChange={handleChange}
       />
       <input
+        className="input"
         type="text"
         placeholder="balance"
         name="balance"
         onChange={handleChange}
       />
       <input
+        className="input"
         type="text"
         placeholder="date"
         name="date"
         onChange={handleChange}
       />
-      <button onClick={handleClick}>Update</button>
+      <button className="btn" onClick={handleClick}>
+        Update
+      </button>
     </div>
   );
 };
