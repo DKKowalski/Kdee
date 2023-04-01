@@ -4,8 +4,10 @@ const AuthContext = createContext(null);
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(localStorage.getItem("user") || null);
 
+  localStorage.setItem("user", user);
   useEffect(() => {
     localStorage.setItem("user", user);
+    console.log(localStorage);
   }, [user]);
 
   const login = (user) => {

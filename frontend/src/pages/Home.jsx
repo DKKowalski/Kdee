@@ -30,7 +30,7 @@ const Books = () => {
 
   return (
     <div className="home container-wrapper">
-      <nav class="navbar bg-light">
+      <nav className="navbar bg-light">
         <img className="logo" src={logo} alt="emergent payment" />
         <div>
           <button className="btn btn-secondary margin-right">
