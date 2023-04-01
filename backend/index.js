@@ -32,6 +32,29 @@ app.get("/dues/search/:id", (req, res) => {
   });
 });
 
+app.get("/trans/search/:id", (req, res) => {
+  const clientId = req.params.id;
+  const q = "SELECT * FROM payment_transactions WHERE name = ?";
+  db.query(q, [clientId], (err, data) => {
+    if (err) return res.json(err);
+    return res.json(data);
+  });
+});
+
+app.get("/login", (req, res) => {
+  const { username, password } = req.query;
+  const q =
+    "SELECT * FROM login_credentials WHERE `username` = ? AND `password` = ?";
+  db.query(q, [username, password], (err, data) => {
+    if (err) return res.json(err);
+
+    if (data.length > 0) {
+      return res.json("success");
+    } else {
+      return res.json(null);
+    }
+  });
+});
 app.post("/dues", (req, res) => {
   const q =
     "INSERT INTO dues (`name`,`phone_number`,`balance`,`date`) VALUES (?)";
@@ -60,12 +83,13 @@ app.put("/dues/:id", (req, res) => {
   const clientId = req.params.id;
   const q =
     "UPDATE dues SET `name` = ?, `phone_number` = ?, `balance` = ?, `date` = ? WHERE id = ?";
-    const values = [
-      req.body.name,
-      req.body.phone_number,
-      req.body.balance,
-      req.body.date,
-    ];
+  const values = [
+    req.body.name,
+    req.body.phone_number,
+    req.body.balance,
+    req.body.date,
+  ];
+
   db.query(q, [...values, clientId], (err, data) => {
     if (err) return res.json(err);
     return res.json("book has been updated sucessfully");
