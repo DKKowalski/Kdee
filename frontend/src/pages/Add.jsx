@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import "../App.css";
 
 const Add = () => {
   const [dues, setDues] = useState({
@@ -24,7 +25,7 @@ const Add = () => {
   };
   return (
     <div className="form">
-      <h1>Add New Book</h1>
+      <h1>Add New Client</h1>
       <input
         className="input"
         type="text"
@@ -53,7 +54,7 @@ const Add = () => {
         name="date"
         onChange={handleChange}
       />
-      <button className="btn" onClick={handleClick}>
+      <button className="btn btn-success round" onClick={handleClick}>
         Add
       </button>
     </div>

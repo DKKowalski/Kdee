@@ -1,3 +1,4 @@
+import "../App.css";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
@@ -23,7 +24,7 @@ const Search = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete("http://localhost:8800/books/" + id);
+      await axios.delete("http://localhost:8800/dues/" + id);
       window.location.reload();
     } catch (err) {
       console.log(err);
@@ -31,8 +32,8 @@ const Search = () => {
   };
 
   return (
-    <div className="search">
-      <h1>Staff</h1>
+    <div className="search container-wrapper">
+      <h1>Clients</h1>
       <div className="search-field">
         <input
           className="search-input"
@@ -41,7 +42,7 @@ const Search = () => {
           name="name"
           onChange={handleChange}
         />
-        <button className="btn" onClick={fetchAClient}>
+        <button className="btn btn-secondary round" onClick={fetchAClient}>
           search
         </button>
       </div>

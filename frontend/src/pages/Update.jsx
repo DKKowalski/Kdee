@@ -1,3 +1,4 @@
+import "../App.css";
 import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -27,39 +28,41 @@ const Update = () => {
     }
   };
   return (
-    <div className="form">
-      <h1>Update Client Data</h1>
-      <input
-        className="input"
-        type="text"
-        placeholder="name"
-        name="name"
-        onChange={handleChange}
-      />
-      <input
-        className="input"
-        type="text"
-        placeholder="phone_number"
-        name="phone_number"
-        onChange={handleChange}
-      />
-      <input
-        className="input"
-        type="text"
-        placeholder="balance"
-        name="balance"
-        onChange={handleChange}
-      />
-      <input
-        className="input"
-        type="text"
-        placeholder="date"
-        name="date"
-        onChange={handleChange}
-      />
-      <button className="btn" onClick={handleClick}>
-        Update
-      </button>
+    <div className="container-wrapper">
+      <div className=" form">
+        <h1>Update Client Data</h1>
+        <input
+          className="input"
+          type="text"
+          placeholder="name"
+          name="name"
+          onChange={handleChange}
+        />
+        <input
+          className="input"
+          type="text"
+          placeholder="phone_number"
+          name="phone_number"
+          onChange={handleChange}
+        />
+        <input
+          className="input"
+          type="text"
+          placeholder="balance"
+          name="balance"
+          onChange={handleChange}
+        />
+        <input
+          className="input"
+          type="text"
+          placeholder="date"
+          name="date"
+          onChange={handleChange}
+        />
+        <button className="btn btn-success round" onClick={handleClick}>
+          Update
+        </button>
+      </div>
     </div>
   );
 };

@@ -7,39 +7,49 @@
 body {
   font-family: "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
     "Droid Sans", "Helvetica Neue", sans-serif;
-  background-color: rgba(255, 166, 0, 0.258);
+  background-color: rgba(255, 166, 0, 0.258) !important;
 }
 .App {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+
   gap: 1000px;
-  margin: 100px auto;
-  padding: 100px;
-  border-radius: 10px;
+  margin: 0px auto;
+  /* padding-block: 100px; */
   box-shadow: 1px 1px 1px 1px rgba(68, 68, 68, 0.092);
   max-width: 1200px;
   background: #fff;
   position: relative;
 }
-
+.bg-color {
+  background-color: #7d797c;
+}
+.logo-login {
+  height: 100px;
+  margin-bottom: 16px;
+}
+.container-wrapper {
+  padding-inline: 30px;
+  padding-block: 100px;
+}
 .home nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 400px;
-  padding: 10px;
   border-radius: 10px;
   margin-bottom: 100px;
   border: 1px solid #444;
   box-shadow: 1px 1px 1px rgba(68, 68, 68, 0.29);
-  max-width: 850px;
+  padding-inline: 32px;
   border-color: rgba(255, 166, 0, 0.258);
 }
-
+.round {
+  border-radius: 30px !important;
+}
+.margin-right {
+  margin-right: 10px;
+}
 .btn {
-  font-size: 16px;
+  font-size: 22px;
+  font-weight: 700;
   padding: 10px;
   width: 100px;
   height: 50px;
@@ -56,14 +66,9 @@ body {
 .btn a:link,
 .btn a:visited {
   text-decoration: none;
-  color: orangered;
+  color: #fff;
   font-size: 13px;
   transition: all 0.3s;
-}
-
-.btn:hover {
-  color: #fff;
-  background-color: rgba(255, 166, 0, 0.258);
 }
 
 .update,
@@ -131,31 +136,29 @@ tbody tr:nth-child(even) {
 .logo {
   width: 20%;
 }
-.search,.form{
+.search,
+.form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 60px;
+  gap: 38px;
 }
-.search-field{
+.search-field {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 30px;
- 
 }
 
-.search-input{
+.search-input {
   padding: 18px;
   border-radius: 30px;
   width: 420px;
- 
 }
 
-.input{
+.input {
   width: 420px;
   padding: 12px;
   border-radius: 30px;
   border-color: orange;
 }
-

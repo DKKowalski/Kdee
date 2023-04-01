@@ -1,7 +1,9 @@
+import "../App.css";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import logo from "../emergent.jpg"
+import logo from "../emergent.jpg";
+import LogoutButton from "./Logout";
 
 const Books = () => {
   const [dues, setDues] = useState([]);
@@ -27,14 +29,18 @@ const Books = () => {
   };
 
   return (
-    <div className="home">
-      <nav>
-      <img className="logo" src={logo} alt="emergent payment" />
+    <div className="home container-wrapper">
+      <nav class="navbar bg-light">
+        <img className="logo" src={logo} alt="emergent payment" />
         <div>
-          <button className="btn">
-            <Link to="/search">Search</Link>
+          <button className="btn btn-secondary margin-right">
+            <Link to="/search">Clients</Link>
+          </button>
+          <button className="btn btn-secondary">
+            <Link to="/transactions">Transactions</Link>
           </button>
         </div>
+        <LogoutButton />
       </nav>
 
       <table>
@@ -56,13 +62,13 @@ const Books = () => {
               <td>{dues.balance}</td>
               <td>{dues.date}</td>
               <td>
-                <button className="update">
+                <button className="btn btn-success">
                   <Link to={`/update/${dues.id}`}>Update</Link>
                 </button>
               </td>
               <td>
                 <button
-                  className="delete"
+                  className="btn btn-warning"
                   onClick={() => handleDelete(dues.id)}
                 >
                   Delete
@@ -72,8 +78,8 @@ const Books = () => {
           ))}
         </tbody>
       </table>
-      <button className="btn btn--middle">
-        <Link  to="/add">Add New Client</Link>
+      <button className="btn btn--middle btn-primary">
+        <Link to="/add">Add New Client</Link>
       </button>
     </div>
   );
